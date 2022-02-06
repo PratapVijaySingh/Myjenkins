@@ -7,15 +7,21 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/PratapVijaySingh/test1.git'
             }
         }
-        stage('Compile source') {
+        stage('Build source') {
             steps {
                 bat ''' cd /D D:\\Learning\\localgitrepo
                 npm install '''
             }
         }
-        stage('Hello') {
+        
+         stage('Testing') {
             steps {
-                echo 'Hello World'
+                echo 'Testing Completed'
+            }
+        }
+        stage('Release') {
+            steps {
+                echo 'Release done'
             }
         }
     }
